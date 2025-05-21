@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Pacientes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen">
+
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center text-blue-700 mb-10">Sistema de Gestión Médica</h1>
+
+    <!-- Registro de Pacientes -->
+    <section class="bg-white rounded-xl shadow-lg p-6 mb-12">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-600">Registro de Paciente</h2>
+      <form id="pacienteForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="text" id="dui" placeholder="DUI (00000000-0)" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        <input type="text" id="nombre" placeholder="Nombre" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        <input type="text" id="apellido" placeholder="Apellido" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        <input type="tel" id="telefono" placeholder="Teléfono" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        <input type="email" id="correo" placeholder="Correo" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        <input type="date" id="fecha_nacimiento" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+        <select id="tipo_paciente" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 col-span-1 md:col-span-2">
+          <option value="regular">Regular</option>
+          <option value="pensionado">Pensionado</option>
+          <option value="medicamento_permanente">Medicamento Permanente</option>
+        </select>
+
+        <button type="submit"
+          class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg col-span-1 md:col-span-2 transition">
+          Registrar Paciente
+        </button>
+
+        <p id="registroMensaje" class="text-green-600 font-semibold col-span-2"></p>
+      </form>
+    </section>
+
+    <!-- Reservar Cita -->
+    <section class="bg-white rounded-xl shadow-lg p-6">
+      <h2 class="text-2xl font-semibold mb-6 text-green-600">Reservar Cita</h2>
+      <form id="citaForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="text" id="duiCita" placeholder="DUI del Paciente" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"/>
+        <input type="datetime-local" id="fechaCita" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"/>
+        <input type="text" id="medico" placeholder="Nombre del Médico" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"/>
+        <input type="text" id="especialidad" placeholder="Especialidad" required
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"/>
+
+        <button type="submit"
+          class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg col-span-1 md:col-span-2 transition">
+          Reservar Cita
+        </button>
+
+        <p id="citaMensaje" class="text-green-600 font-semibold col-span-2"></p>
+      </form>
+    </section>
+  </div>
+
+  <!-- Enlace al archivo JS -->
+  <script src="app.js"></script>
+</body>
+</html>
